@@ -10,7 +10,7 @@
 //variables on a basic java program
 // 
 //  first compile the program javac Cyclometer.java
-//  run the program java Cyclometer
+//  then run the program java Cyclometer
 
 //  define a class  
 public class Cyclometer {
