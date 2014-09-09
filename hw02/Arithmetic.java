@@ -54,22 +54,22 @@ public class Arithmetic {
        // Above gives the tax spent for each item and the total money spend on tax. 
        // There is a 6% tax for each item.
        
-       double totalSockCost$=(nSocks*sockCost$);  //total cost of socks before tax
-       double totalGlassCost$=(nGlasses*glassCost$);  //total cost of glasses before tax
-       double totalEnvelopeCost$=(nEnvelopes*envelopeCost$);  //total cost of box of envelope before tax
+       double subTotalSockCost$=(nSocks*sockCost$);  //total cost of socks before tax
+       double subTotalGlassCost$=(nGlasses*glassCost$);  //total cost of glasses before tax
+       double subTotalEnvelopeCost$=(nEnvelopes*envelopeCost$);  //total cost of box of envelope before tax
        System.out.println("The subtotal of the socks is "
-              +d.format(totalSockCost$)+ " dollars.");
+              +d.format(subTotalSockCost$)+ " dollars.");
        System.out.println("the subtotal of the drinking glasses is "
-              +d.format(totalGlassCost$)+ " dollars.");
+              +d.format(subTotalGlassCost$)+ " dollars.");
        System.out.println("The subtotal of a box of envelopes is "
-              +d.format(totalEnvelopeCost$)+ " dollars.");
+              +d.format(subTotalEnvelopeCost$)+ " dollars.");
        System.out.println("The final subtotal is "
-              +(totalEnvelopeCost$+totalSockCost$+totalGlassCost$)+ " dollars.");
+              +(subTotalEnvelopeCost$+subTotalSockCost$+subTotalGlassCost$)+ " dollars.");
        // Above only gives the total of each item minus tax and the subtotal.
        
-       double totalSockAndTaxCost$=totalSockCost$+nSocks*sockCost$*taxPercent;  //total cost of socks plus tax
-       double totalGlassAndTaxCost$=totalGlassCost$+nGlasses*glassCost$*taxPercent;  //total cost of glasses plus tax
-       double totalEnvelopeAndTaxCost$=totalEnvelopeCost$+nEnvelopes*envelopeCost$*taxPercent;  //total cost of a box of envelopes plus tax  
+       double totalSockAndTaxCost$=subTotalSockCost$+nSocks*sockCost$*taxPercent;  //total cost of socks plus tax
+       double totalGlassAndTaxCost$=subTotalGlassCost$+nGlasses*glassCost$*taxPercent;  //total cost of glasses plus tax
+       double totalEnvelopeAndTaxCost$=subTotalEnvelopeCost$+nEnvelopes*envelopeCost$*taxPercent;  //total cost of a box of envelopes plus tax  
        System.out.println("The total cost for 3 pairs of socks is "
               +d.format(totalSockAndTaxCost$)+
               " dollars.");
