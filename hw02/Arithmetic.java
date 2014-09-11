@@ -8,7 +8,7 @@
 //will be practice sorting data in
 //variables, running calculations, and
 //printing the numerical output we've
-//generated.This wil futher improve out 
+//generated.This will futher improve out 
 //programming skills and give us a better
 //idea of what one can do on java. 
 //
