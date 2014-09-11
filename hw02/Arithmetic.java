@@ -8,7 +8,9 @@
 //will be practice sorting data in
 //variables, running calculations, and
 //printing the numerical output we've
-//generated. 
+//generated.This wil futher improve out 
+//programming skills and give us a better
+//idea of what one can do on java. 
 //
 //  First compile the program javac Arithmetic.java
 //  Then run the program java Arithmetic

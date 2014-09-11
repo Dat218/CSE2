@@ -1,5 +1,5 @@
 ///////////////////////////////
-//Brian chen
+//Daniel Truong
 //HW01
 //September 2, 2014
 //Welcome Class Java Program
