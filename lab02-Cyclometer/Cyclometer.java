@@ -7,7 +7,7 @@
 //The purpose of this lab is to
 //learn how to perform basic computations 
 //with numrerical values represent by 
-//variables on a basic java program
+//variables on a basic java program.
 // 
 //  first compile the program javac Cyclometer.java
 //  then run the program java Cyclometer
