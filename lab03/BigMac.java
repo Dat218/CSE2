@@ -1,6 +1,6 @@
 /////////////////////////////////
 //Daniel Truong
-//CSE002 
+//CSE002
 //September 12, 2014
 //
 //We will be performing basic computations,
