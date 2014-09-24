@@ -72,7 +72,7 @@ public class Month {
     if (nMonth == 2) {
       System.out.print("Enter an int giving the year ");
       int nYear = myScanner.nextInt();
-        if (nYear >= 0 && nYear%100==0 && nYear%400==0) {
+        if (nYear%4 == 0) {
               System.out.println("This is a leap year. February has 29 days.");
         } //if a leap year is inputted
        else {
