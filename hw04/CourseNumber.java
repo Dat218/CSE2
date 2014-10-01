@@ -32,13 +32,13 @@ public class CourseNumber {
       if (semester == 40) {
         System.out.println("The course was offered in the Fall semester of " +nYear); //determining fall semester and year
       } //determining fall semester and year
-      else if (semester == 10) {
+      if (semester == 10) {
         System.out.println("The course was offered in the Spring semeser of " +nYear); 
       } //determining spring semester and year
-      else if (semester == 20) {
+      if (semester == 20) {
         System.out.println("The course was offered in the Summer 1 semester of " + nYear); 
       } //determining summer 1 semester and year
-      else if (semester == 30) {
+      if (semester == 30) {
         System.out.println("The course was offered in the Summer 2 semester of " + nYear);
       } //determing summer 2 semester and year
       else {
