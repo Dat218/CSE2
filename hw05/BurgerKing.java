@@ -26,6 +26,7 @@ public class BurgerKing {
         String input = myScanner.next(); //asks the user to input the letter of what he or she deisres. 
         if (input.length() > 1) {
             System.out.println("Error: a single characer expected."); //User can only input one letter
+            return;
         } //In case user accidentally enters two letters
             switch (input) { //switch statement!!!
                 case "B":

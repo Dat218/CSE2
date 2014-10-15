@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class IncomeTax {
 
 //main method required for every java program 
-  public static void main(String[] args) {
+  public static void main(String []args) {
       
   Scanner myScanner; //construct
   myScanner = new Scanner( System.in ); //declare
