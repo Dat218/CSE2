@@ -30,9 +30,9 @@ public class HW8{
         while (true) {
             userInput = scan.next(); //represents what user will input
             if (userInput.length()==1) { //input must be only one character
-                for (int i=0; i<compareCc.length(); i++) { //Loop allows program to compare user input to C and c
+                for (int i=0; i<compareCc.length(); i++) { //Loop allows program to compare user input character to C and c
                     if (userInput.equals(""+compareCc.charAt(i))) { //Converting char to String to compare the two character. 
-                        return compareCc.charAt(i); //Value gets substituted for getInput
+                        return compareCc.charAt(i); //character gets substituted for getInput
                     } 
                 } 
                 System.out.print("You did not enter a character from the list 'Cc'; try again- "); //user did not enter C or c. Cannot move on
@@ -45,7 +45,7 @@ public class HW8{
     
     public static char getInput(Scanner scan, String compareyYnN, int maxAttempts) { //Method for second getInput
         String userInput;
-        for (int j=0; j<maxAttempts; j++) { //This only gives user 5 tries
+        for (int j=0; j<maxAttempts; j++) { //Only allowed five maximum tries
             userInput = scan.next(); //user input
             if (userInput.length()==1) { //ensures that user input is only one character long
                 for (int i=0; i<compareyYnN.length(); i++) { //This will make sure that user input will be compared to n, N, y, and Y.
@@ -61,7 +61,7 @@ public class HW8{
         } 
         System.out.println("");
         System.out.println("You failed after 5 tries.");
-        return ' ';
+        return ' '; //Nothing gets returned if user never entered correct character in 5 tries. 
     }
     
     public static char getInput(Scanner scan, String chooseADigit, String compareNumbers) { //Method for third getInput
@@ -72,7 +72,7 @@ public class HW8{
             if (userInput.length()==1) { //ensures that only one digit is entered
                 for (int i=0; i<compareNumbers.length(); i++) { //compares user digit to all 10 digits separately
                     if (userInput.equals(""+compareNumbers.charAt(i))) { //convertion from char to string in order to compare two values 
-                        return compareNumbers.charAt(i); //Substitutes the user input for getInput
+                        return compareNumbers.charAt(i); //Substitutes the user digit input for getInput
                     }
                 }
                 System.out.print("Please enter a digit. Try again- "); //User did not enter a digit
