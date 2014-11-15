@@ -1,5 +1,5 @@
 ///////////////////////////////////////
-//Brian Chen
+//Daniel Truong
 //Demo 0
 //Hello World Java Program
 //
@@ -11,7 +11,7 @@
 //  define a class
 public class HelloWorld{
     
-//  add main method
+//main method required for every clas
   public static void main(String[] args) {
       
 //  print the statement with box around it
