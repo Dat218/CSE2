@@ -10,7 +10,7 @@
 //  first compile the program javac BigMac.java
 //  then run the program java BigMac
 //
-//  define a class
+//define a class
 import java.util.Scanner;//import
 public class BigMac {
     
