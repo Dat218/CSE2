@@ -12,7 +12,7 @@
 //  first compile the program javac Cyclometer.java
 //  then run the program java Cyclometer
 
-//  define a class  
+//define a class  
 public class Cyclometer {
 
 //main method required for every Java Program
