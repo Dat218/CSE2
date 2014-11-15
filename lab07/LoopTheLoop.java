@@ -26,29 +26,31 @@ public class LoopTheLoop {
     
     Scanner myScanner = new Scanner ( System.in );
     System.out.print("Enter an int between 1 and 15- ");
-         int input = myScanner.nextInt();
+        if (myScanner.hasNextInt()) {
+          int input = myScanner.nextInt();
+          if(input<=15 && input>0) {
+            for (int i=0; i<input; i++) {
+              System.out.print("*");
+          }
+                System.out.println("");
 
-      if(input<=15 && input>0) {
-        for(int i=0; i<input; i++) {
-           if (i>0) {
-             System.out.println("");
-           }
+            for(int i=0; i<input; i++) {
+              if (i>0) {
+                System.out.println("");
+              }
               for(int j=0; j<=i; j++) {
                 System.out.print("*");
               }
+            }
+                System.out.println("");
+          }
+          else {
+            System.out.println("Enter a damn integer within the range.");
+          }
         }
-        System.out.println("");
-      }
-      else {
-        System.out.println("Enter a damn integer within the range.");
-      }
-      
-        
-     //nStar = 1;
-    //System.out.println("*");
-    //nStar ++; 
-    
-    
+        else {
+          System.out.println("You did not enter an int");
+        } //course number MUST be an int!
 
   }
 }
