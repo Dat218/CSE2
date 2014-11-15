@@ -26,6 +26,7 @@ public class LoopTheLoop {
     
     Scanner myScanner = new Scanner ( System.in );
     System.out.print("Enter an int between 1 and 15- ");
+      while(true) {
         if (myScanner.hasNextInt()) {
           int input = myScanner.nextInt();
           if(input<=15 && input>0) {
@@ -51,6 +52,16 @@ public class LoopTheLoop {
         else {
           System.out.println("You did not enter an int");
         } //course number MUST be an int!
-
+      
+      System.out.print("Enter y or Y to go again: ");
+      String userInput = myScanner.next();
+        if (userInput != "y" || userInput != "Y") {
+          System.out.println("End of Program");
+          break;
+        }
+        else {
+          System.out.print("Enter an int between 1 and 15- ");
+        }
+      } 
   }
 }
