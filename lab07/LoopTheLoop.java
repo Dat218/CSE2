@@ -26,9 +26,14 @@ public class LoopTheLoop {
     
     Scanner myScanner = new Scanner ( System.in );
     System.out.print("Enter an int between 1 and 15- ");
+    int input;
       while(true) {
-        if (myScanner.hasNextInt()) {
-          int input = myScanner.nextInt();
+        if (!myScanner.hasNextInt()) {
+          System.out.print("You did not enter an int; try again: ");
+          myScanner.next();
+        }
+        else {
+          input = myScanner.nextInt();
           if(input<=15 && input>0) {
             for (int i=0; i<input; i++) {
               System.out.print("*");
@@ -46,24 +51,20 @@ public class LoopTheLoop {
                 System.out.println("");
           }
           else {
-            System.out.println("Enter a integer within the range: ");
+            System.out.print("Enter a integer within the range: ");
+            myScanner.next();
           }
         }
-        else {
-          System.out.println("You did not enter an int; try again: ");
-        }
-          System.out.print("Enter y or Y to continue: ");
-            String compare = "Yy";
-            String userInput = myScanner.next();
-                for (int i=0; i<compare.length(); i++) { 
-                    if (userInput.equals(compare.charAt(i))) {
-                      System.out.print("Enter an int between 1 and 15- ");
-                    }
-                    else {
-                      System.out.println("Program ended");
-                      System.exit(0);
-                    }
-                }
+          System.out.print("Enter y or Y to go again- ");
+          String userInput = myScanner.next();
+            if (userInput.equals("Y") || userInput.equals("y")) {
+                System.out.print("Enter an int between 1 and 15- ");  
+                  continue;
+            } 
+            else {
+                System.out.println("END OF Program!!!");
+                System.exit(0);
+            }
       } 
   }
 }

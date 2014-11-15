@@ -18,46 +18,58 @@ public class MethodCalls{
     }
 
     public static int addDigit(int x, int y) {
-        if (x>0) {
-            int multiply = 10;
-            String number = "" + x;
-            for (int i=1; i<number.length(); i++) {
-                multiply = multiply * 10; 
-            }
-            int totalSum = (y*multiply) + x;
-            return totalSum;
-        }
+        if (y>9 || y<1) {
+            return x;
+        }   
         else {
-            int multiply = -10;
-            String number = "" + x;
-            for (int i=1; i<number.length()-1; i++) {
-                multiply = multiply * 10; 
+            if (x>0) {
+                int multiply = 10;
+                String number = "" + x;
+                for (int i=1; i<number.length(); i++) {
+                    multiply = multiply * 10; 
+                }
+                int totalSum = (y*multiply) + x;
+                return totalSum;
             }
-            int totalSum = (y*multiply) + x;
-            return totalSum;
+            else {
+                int multiply = -10;
+                String number = "" + x;
+                for (int i=1; i<number.length()-1; i++) {
+                    multiply = multiply * 10; 
+                }
+                int totalSum = (y*multiply) + x;
+                return totalSum;
+            }
         }
     }
     
     public static int join(int x, int y) {
-        if (y>0) {
-            int multiply = 10;
-            String number = "" + y;
-            for (int i=1; i<number.length(); i++) {
-                multiply = multiply * 10; 
+        if (x>9 || x<0) {    
+            if (y>0) {
+                int multiply = 10;
+                String number = "" + y;
+                for (int i=1; i<number.length(); i++) {
+                    multiply = multiply * 10; 
+                }
+                int totalSum = (x*multiply) + y;
+                    return totalSum;
             }
-            int totalSum = (x*multiply) + y;
-            return totalSum;
-        }
-        else {
-            int multiply = 10;
-            int positiveY = -1*y;
-            int positiveX = -1*x;
-            String number = "" + y;
+            else {
+                int positiveY = -1*y;
+                int positiveX = -1*x;
+                int multiply = 10;
+                String number = "" + y;
                 for (int i=1; i<number.length()-1; i++) {
                     multiply = multiply * 10;
                 }
-            int totalSum = (positiveX*multiply) + positiveY;
-            return totalSum;
+                int totalSum = (positiveX*multiply) + positiveY;
+                    return totalSum;
+            }
+        }
+        else {
+            int totalSum = addDigit(y,x);
+                return totalSum;
+            
         }
     }
     
