@@ -11,11 +11,23 @@ public class Methods {
      int b=getInt(scan);
      int c=getInt(scan);
      System.out.println("The larger of "+a+" and "+b+" is "+larger(a,b));
+     System.out.println("The larger of "+a+", "+b+", and "+c+
+                                    " is "+larger(a,larger(b,c)));
      System.out.println("It is "+ascending(a,b,c)+" that "+a+", "+b+
                                    ", and "+c+" are in ascending order");
   }
     public static int getInt(Scanner scan) {    
-            return scan.nextInt();
+        System.out.print("Enter an int: ");
+            while (true) {
+                if (scan.hasNextInt()) {
+                    return scan.nextInt();
+                }
+                else {
+                    System.out.print("You did not enter an int; try again- ");
+                    scan.next();
+                }
+            }
+
     }  
     
     public static int larger(int a, int b) {
@@ -26,9 +38,6 @@ public class Methods {
             return b;      
         }
     }        
-    
-        // System.out.println("The larger of "+a+", "+b+", and "+c+
-        //               " is "+larger(a,larger(b,c)));
     
     public static boolean ascending(int a, int b, int c) { 
         if (c>b && b>a) {
