@@ -46,22 +46,24 @@ public class LoopTheLoop {
                 System.out.println("");
           }
           else {
-            System.out.println("Enter a damn integer within the range.");
+            System.out.println("Enter a integer within the range: ");
           }
         }
         else {
-          System.out.println("You did not enter an int");
-        } //course number MUST be an int!
-      
-      System.out.print("Enter y or Y to go again: ");
-      String userInput = myScanner.next();
-        if (userInput != "y" || userInput != "Y") {
-          System.out.println("End of Program");
-          break;
+          System.out.println("You did not enter an int; try again: ");
         }
-        else {
-          System.out.print("Enter an int between 1 and 15- ");
-        }
+          System.out.print("Enter y or Y to continue: ");
+            String compare = "Yy";
+            String userInput = myScanner.next();
+                for (int i=0; i<compare.length(); i++) { 
+                    if (userInput.equals(compare.charAt(i))) {
+                      System.out.print("Enter an int between 1 and 15- ");
+                    }
+                    else {
+                      System.out.println("Program ended");
+                      System.exit(0);
+                    }
+                }
       } 
   }
 }
