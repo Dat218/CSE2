@@ -10,4 +10,4 @@ public class Arrays {
         System.out.println("Enter 10 ints with a space between each integer: ");
         int[] list = new int [10];
     }
-}///////////////////////////////////////
+}
