@@ -20,7 +20,7 @@ public class Enigma0{
       System.out.println("You entered "+n);
     }
     
-    int k=4,p=6,q=7,r=8;
+    int k=4,p=6,q=7,r=8; //TOOK N OUT OF HERE
     switch(k+p+q+r){
       case 24: 
       case 25: System.out.println("sum is 25");
@@ -32,8 +32,8 @@ public class Enigma0{
 
 /* Error report:
  *   Expand this comment:
- *   The scope of the program was incorrect. n was declared and initialized inside the if and else statemnet. 
+ *   The scope of the program was inaccurate. n was declared and initialized inside the if and else statemnet. 
  *   Therefore, when n is called for again in the switch statement, it could not be found. 
  *   This issue was solved by declaring n in the very beginning of the program
- *   It allowed for n to run through the loop and equal one of the given numbers
+ *   It allowed for n to run through the loop and equal one of the given numbers and be printed out at the end.
  */
