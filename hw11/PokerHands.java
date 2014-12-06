@@ -96,7 +96,7 @@ public class PokerHands {
                                 } //Follows same process as above. Stores entered card number 
                             hand[i] = deck[userSuit][userCard]; //Allows user to officially draw card
                         } while(hand[i] == -1);
-                    } //Ensures that user does noselect same card twice.
+                    } //Ensures that user does not select same card twice.
                     deck[userSuit][userCard] = -1; //Swaps -1 with selected card to prevent reselection in same hand
                         switch(userSuit) {
                             case 0: clubs+=userCardInput+" "; break;
@@ -117,12 +117,12 @@ public class PokerHands {
             System.out.println(clubs);
             System.out.println(diamonds);
             System.out.println(hearts);
-            System.out.println(spades);
-            rankHand(hand,handSuit);
+            System.out.println(spades); //Outputs hand!!!!
+            rankHand(hand,handSuit); 
             System.out.print("Enter 'Y' or 'y' to enter another hand: ");
                 userInput = scan.next(); 
         }while(userInput.equals("y") || userInput.equals("Y"));
-    } //Prompts user whether he/she wants to pick another hand
+    } //Prompts user on whether he/she wants to pick another hand
     //Used to find the strength of the user's hand
     public static void rankHand(int[] hand, int[]handSuit) {
         if (checkRoyalFlush(hand,handSuit) == true) {
