@@ -105,6 +105,7 @@ public class MatrixSorter{
     
     public static void sort(int[][] mat3d) { //Sorts the third slab of the 3d array. Sorts row first than first column
         int[][] compare = new int[7][]; //compare is used later to store row of array in order to swap
+            //seletion sort to sort row
             for (int m=0; m<2*2+3; m++) {
                 for (int n=0; n<m+2; n++) {
                     for (int b=1+n; b<m+2+1; b++) { 
@@ -118,37 +119,21 @@ public class MatrixSorter{
                     }
                 }
             } //this sorts every row in the third slab
-            int maxIndex = 0; 
-            for (int m=0; m<1; m++) {
-                for (int b=m+1; b<7; b++) {
-                    if (mat3d[b][0]>mat3d[maxIndex][0]) {
-                        maxIndex = b;
-                    }
-                }
-                compare[6] = mat3d[maxIndex];
-            } //I used this to store the largest number of the first column since the code in the 
-              //bottom only organizes the first six rows based on the first number of the row and stores them in the new array compare
-              //the 7th row is not stored so we store it up here.
             
-            for (int m=0; m<6; m++) {
-                int minIndex = m;
-                for (int b=m+1; b<7; b++) {
-              
-                    if (mat3d[b][0]<mat3d[minIndex][0]) {
-                        minIndex = b;
+            //insertion sort to sort column
+            for (int i=1; i<7; i++) { 
+                int index = i;
+                for (int m=7-(8-i); m>=0; m--) { //nested for loop in order to conduct insertion sort
+                    if (mat3d[index][0] < mat3d[m][0]) {
+                        compare[0] = mat3d[index];
+                        compare[1] = mat3d[m]; //temporary array rows for swapping 
+                        mat3d[index] = compare[1];
+                        mat3d[m] = compare[0]; //swapping process for sorting
+                        index = m; 
+                        //set "index" equal to the index of the row it just swapped with to continue the swap
+                        //becuase after swap, mat3d[index][0] would still refer to the row's previous position before the swap. 
                     }
                 }
-                compare[m] = mat3d[minIndex]; //the mth row of compare is stored with the current min
-                int[] temp = mat3d[minIndex];
-                mat3d[minIndex] = mat3d[m];
-                mat3d[m] = temp; //Swaps min with first row to ensure it will not be compared on 
             }
-            
-            for (int m=0; m<7; m++) {
-                mat3d[m] = new int[compare[m].length];
-                for (int b=0; b<mat3d[m].length; b++) {
-                    mat3d[m][b] = compare[m][b];
-                }
-            } //Used to reallocated and initialize mat3d so it will be in the correct order. 
     }
 }

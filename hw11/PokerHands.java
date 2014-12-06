@@ -38,20 +38,25 @@ public class PokerHands {
                 } //Initialize deck
                 for (int i=0; i<5; i++) {
                     System.out.print("Enter the suit: 'c', 'd', 'h', or 's': ");
-                        do {
-                            userSuitInput = scan.next();
+                        userSuitInput = scan.next();
+                        while(!userSuitInput.equals("c") && !userSuitInput.equals("d") && !userSuitInput.equals("h") && !userSuitInput.equals("s")) {
+                            System.out.println("You did not enter a valid response; Try again: "); 
+                            System.out.print("Enter the suit: 'c', 'd', 'h', or 's': ");
+                                userSuitInput = scan.next();
+                        } //Ensures user enters valid character
                             switch (userSuitInput) {
                                 case "c": userSuit = 0; handSuit[i] = 0; break;
                                 case "d": userSuit = 1; handSuit[i] = 1; break;
                                 case "h": userSuit = 2; handSuit[i] = 2; break;
                                 case "s": userSuit = 3; handSuit[i] = 3; break;
-                                default: System.out.print("You did not enter a valid response; Try again: "); 
-                            } //Prompt user to select a suit
-                        }while(userSuit != 0 && userSuit != 1 && userSuit !=2 && userSuit !=3);
-                        //Do while loop ensures that what user inputs is either c, d, h, or s.
+                            } //Stores entered suit
                     System.out.print("Enter one of 'a', 'k', 'q', 'j', '10', ...'2'-");
-                        do{
-                            userCardInput = scan.next(); 
+                        userCardInput = scan.next(); 
+                        while(!userCardInput.equals("a") && !userCardInput.equals("k") && !userCardInput.equals("q") && !userCardInput.equals("j") && !userCardInput.equals("10") && !userCardInput.equals("9") && !userCardInput.equals("8") && !userCardInput.equals("7") && !userCardInput.equals("6") && !userCardInput.equals("5") && !userCardInput.equals("4") && !userCardInput.equals("3") &&!userCardInput.equals("2")) {
+                            System.out.println("You did not enter a valid response; Try again: ");
+                            System.out.print("Enter one of 'a', 'k', 'q', 'j', '10', ...'2'-");
+                            userCardInput = scan.next();
+                        } //Ensures user enters valid character
                             switch (userCardInput) {
                                 case "a": userCard = 0; break;
                                 case "k": userCard = 1; break;
@@ -66,12 +71,9 @@ public class PokerHands {
                                 case "4": userCard = 10; break;
                                 case "3": userCard = 11; break;
                                 case "2": userCard = 12; break;
-                                default: System.out.print("You did not enter a valid response; Try again: "); 
-                            } //Prompts user to select a card number and transfer it over to hand
-                            hand[i] = deck[userSuit][userCard];
-                        }while(userCard != 0 && userCard != 1 && userCard != 2 && userCard != 3 && userCard != 4 && userCard != 5 && userCard != 6 && userCard != 7 && userCard != 8 && userCard != 9 && userCard != 10 && userCard != 11 && userCard != 12);
-                        //Ensures that user input is a legitimate card
-                    hand[i] = deck[userSuit][userCard];
+                            } //Stores entered card number
+                    //Ensures that user input is a legitimate card
+                    hand[i] = deck[userSuit][userCard]; //Officially allows user to draw card
                     if (hand[i]==-1) {
                         do {
                             System.out.println("You already entered that card");
@@ -91,11 +93,11 @@ public class PokerHands {
                                 case "4": userCard = 10; break;
                                 case "3": userCard = 11; break;
                                 case "2": userCard = 12; break;
-                                }
-                            hand[i] = deck[userSuit][userCard];
+                                } //Follows same process as above. Stores entered card number 
+                            hand[i] = deck[userSuit][userCard]; //Allows user to officially draw card
                         } while(hand[i] == -1);
                     } //Ensures that user does noselect same card twice.
-                    deck[userSuit][userCard] = -1; 
+                    deck[userSuit][userCard] = -1; //Swaps -1 with selected card to prevent reselection in same hand
                         switch(userSuit) {
                             case 0: clubs+=userCardInput+" "; break;
                             case 1: diamonds+=userCardInput+" "; break;
